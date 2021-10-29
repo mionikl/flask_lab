@@ -1,0 +1,14 @@
+<html>
+<head></head>
+<body>
+<h2>Главное меню</h2>
+<div>
+{%for m in menu%}
+<li> <a href="{{m.url}}"> {{m.name}} </a></li> <br><br>
+{% endfor %}
+</div>
+<form method='GET' action='' align = left>
+  <button type = "submit" value = "exit" name = "exit"> Выход </button>
+</form>
+</body>
+</html>

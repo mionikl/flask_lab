@@ -1,0 +1,25 @@
+ <html>
+ <head>
+  <title>Working with db</title>
+ </head>
+
+ <body bgcolor=silver text=black>
+<h2>Resuts from db</h2>
+<p>Фамилии арендаторов, которые заключили долгосрочные договора аренды, но пока ни разу не сделали заказ на аренду </p>
+<table border =1 width = 80%>
+<tr>
+  <td align = center> Фамилия арендатора </td>
+</tr>
+{%for ch in client%}
+<tr>
+<td align=center>{{ch['name']}}</td>
+</tr>
+{% endfor %}
+</table>
+<br><br>
+<form action='?' method='Post'>
+<div align = center>
+<input type = submit name = exit value = 'exit'>
+</div></form>
+</body>
+</html>

@@ -1,0 +1,31 @@
+ <html>
+ <head>
+  <title>Working with db</title>
+ </head>
+
+ <body bgcolor=silver text=black>
+<h2>Resuts from db</h2>
+<p>Отчет об аренде билбордов за 2017 год</p>
+<table border =1 width = 80%>
+<tr>
+  <td align = center> Номер билборда </td>
+  <td align = center> Адрес установки </td>
+  <td align = center> Месяц </td>
+  <td align = center> Количество дней аренды </td>
+</tr>
+{%for ch in client%}
+<tr>
+<td align=center> {{ch['billnum']}}</td>
+<td align=center> {{ch['adress']}}</td>
+<td align=center> {{ch['mounth']}}</td>
+<td align=center> {{ch['days']}}</td>
+</tr>
+{% endfor %}
+</table>
+<br><br>
+<form action='?' method='POST'>
+<div align = center>
+<input type = submit name = exit value = 'exit'>
+</div></form>
+</body>
+</html>

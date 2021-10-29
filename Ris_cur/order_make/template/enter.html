@@ -1,0 +1,42 @@
+  <html>
+ <head>
+  <title>Working with db</title>
+ </head>
+ <body bgcolor=silver text=black>
+   <form action='?' method='Post'>
+     <label for=grind> Данные арендатора: </label>
+     <label for=grind> Фамилия </label>
+     <input type=text id=x1 name=x1>
+     <label for=grind> Телефон </label>
+     <input type=text id=y1 name=y1><p>
+<table border =1 width = 80%>
+<tr>
+  <td align = center> Адрес</td>
+  <td align = center> Размер</td>
+  <td align = center> Показатель качества</td>
+  <td align = center> Стоимость</td>
+  <td align = center> Месяц начала аренды</td>
+  <td align = center> Год начала аренды</td>
+  <td align = center> Кол-во месяцев</td>
+  <td align = center> Выбор</td>
+</tr>
+{%for ch in client%}
+<tr>
+<td align=center> {{ch['adress']}}</td>
+<td align=center> {{ch['size']}}</td>
+<td align=center> {{ch['lvl']}}</td>
+<td align=center> {{ch['cost']}}</td>
+<td align=center> {{ch['date'].strftime("%B")}}</td>
+<td align=center> {{ch['date'].strftime("%Y")}}</td>
+<td align=center> <input type=text id=z1 name = {{ch['bid']}}></td>
+<td align=center> <input type="checkbox" name="select" value = '{{ch['bid']}}'></td>
+</tr>
+{% endfor %}
+</table>
+<br><br>
+<div align = center>
+<input type = submit name = submit value = 'submit'>
+<input type = submit name = exit value = 'exit'>
+</div></form>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<html>
+<head>
+    <title>Database</title>
+<head>
+<body bgcolor=silver text=black>
+  <form method='GET' action='' align = left>
+    <button type = "submit" value = "exit" name = "exit"> Главное меню </button>
+  </form>
+      <form method='POST' action=''>
+        <table border="1">
+          <tr>
+            <td align = center> Номер заказа</td>
+            <td align = center> Дата</td>
+            <td align = center> Стоимость</td>
+            <td align = center> Состояние заказа </td>
+            <td align = center> Телефон арендатора</td>
+            <td align = center> Фамилия арендатора</td>
+            <td align = center> Просмотр</td>
+          </tr>
+          {%for ch in client%}
+          <tr>
+          <td align=center> {{ch['id']}}</td>
+          <td align=center> {{ch['date']}}</td>
+          <td align=center> {{ch['cost']}}</td>
+          <td align=center> {{ch['state']}}</td>
+          <td align=center> {{ch['tele']}}</td>
+          <td align=center> {{ch['name']}}</td>
+          <td align=center><button type = "submit" value = {{ch['id']}} name = "order"> Показать заказ </button></td>
+          </tr>
+          {% endfor %}
+        </table>
+         </form> <br><br>
+</body>
+<html>

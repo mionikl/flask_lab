@@ -1,0 +1,35 @@
+ <html>
+ <head>
+  <title>Working with db</title>
+ </head>
+
+ <body bgcolor=silver text=black>
+<h2>Resuts from db</h2>
+<p>Все сведения о билбордах с самой низкой стоимостью аренды в день</p>
+<table border =1 width = 80%>
+<tr>
+  <td align = center> ID билборда </td>
+  <td align = center> Стоимость </td>
+  <td align = center> Адрес </td>
+  <td align = center> Размер </td>
+  <td align = center> Показатель качества </td>
+  <td align = center> ID Владельца</td>
+</tr>
+{%for ch in client%}
+<tr>
+<td align=center> {{ch['bid']}}</td>
+<td align=center> {{ch['cost']}}</td>
+<td align=center> {{ch['adress']}}</td>
+<td align=center> {{ch['size']}}</td>
+<td align=center> {{ch['lvl']}}</td>
+<td align=center> {{ch['owid']}}</td>
+</tr>
+{% endfor %}
+</table>
+<br><br>
+<form action='?' method='Post'>
+<div align = center>
+<input type = submit name = exit value = 'exit'>
+</div></form>
+</body>
+</html>

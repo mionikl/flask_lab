@@ -1,0 +1,32 @@
+<html>
+<head>
+  <title>Working with db</title>
+</head>
+<body bgcolor=silver text=black>
+<form method='GET' action='' align = left>
+    <button type = "submit" value = "exit" name = "exit"> Главное меню </button>
+    <button type = "submit" value = "bug" name = "bug"> Подтвердить </button>
+<p>Статус заказа:
+  <select name="status">
+    <option {{off}} selected disabled>{{stat}}</option>
+    <option {{off}} value="оплачен">Оплачен</option>
+    <option {{off}} value="не оплачен">Не оплачен</option>
+    <option {{off}} value="отменен">Отменен</option>
+   </select>
+   Телефон арендатора: {{tel}} Имя арендатора: {{nam}}</p>
+</form>
+<table border =1 width = 80%>
+<tr>
+  <td align = center> Номер билборда </td>
+  <td align = center> Месяц начала аренды </td>
+  <td align = center> Срок аренды(в месяцах) </td>
+</tr>
+{%for ch in client%}
+<tr>
+<td align=center> {{ch['bid']}}</td>
+<td align=center> {{ch['begin']}}</td>
+<td align=center> {{(ch['end'] - ch['begin']).days // 28}}</td>
+</tr>
+{% endfor %}
+</body>
+</html>

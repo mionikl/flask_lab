@@ -1,0 +1,2 @@
+'auth_ad' '1' select on ad.my_groups
+'user_ad' '2' select,insert on ad
